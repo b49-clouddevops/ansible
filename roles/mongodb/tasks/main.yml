@@ -38,3 +38,7 @@
   ansible.builtin.include_role:
     name: common 
     tasks_from: set-hostname 
+
+- name: Adding the the task indicating that the mongodb config is completed 
+  debug: 
+    msg: Mongodb COnfig is Completed
