@@ -18,12 +18,13 @@ pipeline {
             }
         } 
 
-        // stage('Do a dry-run') {        // This will be executed only when you raise a PR
-        //     steps {
-        //         sh "env"   // Just to see tne environment variables as a part of the pipeline
-        //         sh "ansible-playbook robot-dryrun.yml -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW} -e COMPONENT=${params.COMPONENT} -e ENV=${params.ENV}"
-        //     }
-        // }
+        stage('Do a dry-run') {        // This will be executed only when you raise a PR, PR's will only be detected if you use the GitHub Plugin
+        when { branch pattern: "PR-.*", comparator: "REGEXP"}
+            steps {
+                sh "env"   // Just to see tne environment variables as a part of the pipeline
+                sh "ansible-playbook robot-dryrun.yml -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW} -e COMPONENT=${params.COMPONENT} -e ENV=${params.ENV}"
+            }
+        }
 
         stage('Promote to Prod') {
             when { branch 'main' }       
