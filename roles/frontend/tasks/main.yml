@@ -10,17 +10,11 @@
 #     name: common 
 #     tasks_from: download 
 
-- name: Create a directory if it does not exist
-  ansible.builtin.file:
-    path: /tmp
-    state: directory
-    mode: '0755'
-
 # Download from Nexus
 - name: Download and extracting {{COMPONENT}} from NEXUS
   ansible.builtin.unarchive:
     src: "{{REPO_URL}}"
-    dest: /home/centos/{{COMPONENT}}
+    dest: /tmp
     remote_src: yes  ## This will be yes, if  
 
 - name: Cleanup of Old HTML Content 
