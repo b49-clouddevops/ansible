@@ -1,8 +1,9 @@
-- name: Download and extracting {{COMPONENT}}
-  ansible.builtin.unarchive:
-    src: "{{REPO_URL}}"
-    dest: /tmp
-    remote_src: yes  ## This will be yes, if 
+
+# - name: Download and extracting {{COMPONENT}}
+#   ansible.builtin.unarchive:
+#     src: "{{REPO_URL}}"
+#     dest: /tmp
+#     remote_src: yes  ## This will be yes, if 
     
 
-    # We are directly downloading the code and publishing to our servers
+#     # We are directly downloading the code and publishing to our servers
