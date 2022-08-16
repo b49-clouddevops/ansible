@@ -20,6 +20,23 @@
 #      dest: /usr/share/nginx/html
 #      remote_src: yes
 
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /home/centos/{{COMPONENT}}
+    state: directory
+    mode: '0755'
+  become_user: centos
+
+# Download from Nexus
+- name: Download and extracting {{COMPONENT}} from NEXUS
+  ansible.builtin.unarchive:
+    src: "{{REPO_URL}}"
+    dest: /home/roboshop/{{COMPONENT}}
+    remote_src: yes  ## This will be yes, if 
+  become_user: roboshop
+    
+
+
 # If src and dest ends with /, it's very important to know what you're aming directory, not just the content.
 - name: copy the proxy file 
   ansible.builtin.template:
