@@ -8,6 +8,11 @@
 
 #     # We are directly downloading the code and publishing to our servers
 
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /etc/some_directory
+    state: directory
+    mode: '0755'
 
 # Download from Nexus
 - name: Download and extracting {{COMPONENT}} from NEXUS

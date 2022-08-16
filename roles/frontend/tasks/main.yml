@@ -13,6 +13,7 @@
     path: /usr/share/nginx/html
     state: absent    # Absent deletes the files.
 
+# Use it for GitHub Only
 # - name: copy of frontend content to nginx path 
 #   ansible.builtin.copy:
 #      src: /tmp/frontend-main/static/
