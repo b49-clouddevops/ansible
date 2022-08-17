@@ -125,5 +125,5 @@ ansible-pull -U https://github.com/b49-clouddevops/ansible.git -e COMPONENT=fron
 
 
 ### Blockers: 
-1) Node JS Installation
-2) MySQL 
+1) Node JS Installation is causing mirror issue.
+
