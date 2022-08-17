@@ -18,6 +18,7 @@
     name: common
     tasks_from: cleanup
 
+# use this only when you downlod the code from GitHub
 # - name: Generating the articact 
 #   ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
 #   args: 
