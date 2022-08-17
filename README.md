@@ -121,4 +121,5 @@ What is a conflict ?
 --> If the same file is edited by two people in the checkout and if the file is merfed and the person 2 will see a confict stating that this file is modisied since your last checkout!!! Then you need to resolve the conflict, but merging the person1 changes to your repo or accept the changes.
 
 
+ansible-pull -U https://github.com/b49-clouddevops/ansible.git -e COMPONENT=frontend -e ENV=dev -e TAG_NAME=0.0.2 roboshop.yml
 
