@@ -17,6 +17,7 @@
     state: started
     enabled: yes  
 
+# new fix, ensure you also install PyMySQL
 - name: Installing PyMySQL
   ansible.builtin.pip:   #Pythong 2 
     name: PyMySQL
