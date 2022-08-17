@@ -123,3 +123,7 @@ What is a conflict ?
 
 ansible-pull -U https://github.com/b49-clouddevops/ansible.git -e COMPONENT=frontend -e ENV=dev -e TAG_NAME=0.0.2 roboshop.yml
 
+
+### Blockers: 
+1) Node JS Installation
+2) MySQL 
