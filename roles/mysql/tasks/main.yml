@@ -4,11 +4,11 @@
      dest: /etc/yum.repos.d/mysql.repo 
  
 - name: Installing {{COMPONENT}} 
-  ansible.builtin.package:
+  ansible.builtin.yum:
     name: 
        - mysql-community-server
        - MySQL-python
-    state: present 
+    state: installed 
 # We are installing MySQL-python as the task "Check the DB Password " needs that as per the error.
 
 - name: Starting {{COMPONENT}} 
