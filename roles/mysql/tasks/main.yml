@@ -17,6 +17,10 @@
     state: started
     enabled: yes  
 
+- name: Installing
+  ansible.builtin.pip:
+    name: svn+http://myrepo/svn/MyApp#egg=MyApp
+
 - name: Check the DB Password 
   community.mysql.mysql_info:
     login_user: root 
