@@ -8,15 +8,15 @@
     name: common
     tasks_from: create-user
 
-- name: Download and extracting {{COMPONENT}}
-  ansible.builtin.include_role:
-    name: common 
-    tasks_from: download 
-
 - name: Cleanup of {{COMPONENT}} and sorting the permissions
   ansible.builtin.include_role:
     name: common
     tasks_from: cleanup
+
+- name: Download and extracting {{COMPONENT}}
+  ansible.builtin.include_role:
+    name: common 
+    tasks_from: download 
 
 # use this only when you downlod the code from GitHub
 # - name: Generating the articact 
