@@ -4,7 +4,7 @@
 - name: Installing {{COMPONENT}}
   ansible.builtin.package:
     name: 
-      - nodejs
+      # - nodejs
       - gcc-c++ 
     state: present 
 
