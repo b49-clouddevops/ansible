@@ -60,7 +60,7 @@
     name: common 
     tasks_from: download-from-github  
 
-- name: Load Schema 
+- name: Load {{COMPONENT}} Schema 
   community.mysql.mysql_db:
     state: import
     name: all
