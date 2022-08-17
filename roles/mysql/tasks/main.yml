@@ -18,8 +18,8 @@
     enabled: yes  
 
 - name: Installing PyMySQL
-  ansible.builtin.pip:
-    name: 
+  ansible.builtin.pip:   #Pythong 2 
+    name: PyMySQL
 
 - name: Check the DB Password 
   community.mysql.mysql_info:
