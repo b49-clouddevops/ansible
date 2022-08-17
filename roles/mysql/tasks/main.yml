@@ -17,9 +17,9 @@
     state: started
     enabled: yes  
 
-- name: Installing
+- name: Installing PyMySQL
   ansible.builtin.pip:
-    name: svn+http://myrepo/svn/MyApp#egg=MyApp
+    name: 
 
 - name: Check the DB Password 
   community.mysql.mysql_info:
