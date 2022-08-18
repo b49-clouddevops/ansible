@@ -16,11 +16,6 @@
     name: common 
     tasks_from: download 
 
-- name: Cleanup of {{COMPONENT}} and sorting the permissions
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: cleanup
-
 - name: Install Python Dependencies 
   ansible.builtin.pip:
     requirements: /home/{{APPUSER}}/{{COMPONENT}}/requirements.txt
