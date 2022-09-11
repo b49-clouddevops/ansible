@@ -13,7 +13,11 @@
     name: common
     tasks_from: create-user 
 
-
+- name: Download DocDB Pem File 
+  ansible.builtin.get_url:
+    url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+    dest: /home/roboshop/
+    mode: '0440'
 
 - name: Download and extracting {{COMPONENT}}
   ansible.builtin.include_role:
