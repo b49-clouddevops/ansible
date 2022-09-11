@@ -18,6 +18,8 @@
     url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
     dest: /home/roboshop/
     mode: '0440'
+    owner: roboshop 
+    group: roboshop 
 
 - name: Download and extracting {{COMPONENT}}
   ansible.builtin.include_role:
