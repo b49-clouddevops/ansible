@@ -2,3 +2,10 @@
   ansible.builtin.user:
     name: "{{APPUSER}}"
   register: APPUSER_REGISTER
+
+- name: Installing Python Modules for AWS Secrets 
+  ansible.builtin.pip:
+    name:
+      - boto3
+      - botocore
+    executable: pip3  # so that installation happends with python3 installers
