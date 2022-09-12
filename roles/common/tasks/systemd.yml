@@ -3,7 +3,7 @@
      src: systemd.service  
      dest: /etc/systemd/system/{{COMPONENT}}.service
 
-- name: Doing a systemctl daemon_reload: 
+- name: Doing a systemctl daemon_reload
   ansible.builtin.shell:
     cmd: systemctl daemon-reload
 
