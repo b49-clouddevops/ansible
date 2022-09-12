@@ -3,6 +3,10 @@
      src: systemd.service  
      dest: /etc/systemd/system/{{COMPONENT}}.service
 
+- name: Doing a systemctl daemon_reload: 
+  ansible.builtin.shell:
+    cmd: systemctl daemon-reload
+
 - name: Starting {{COMPONENT}} 
   ansible.builtin.service:
     name: "{{COMPONENT}}"
