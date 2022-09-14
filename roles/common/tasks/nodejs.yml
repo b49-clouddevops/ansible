@@ -36,7 +36,7 @@
     name: common 
     tasks_from: systemd 
 
-# Installs Filebeat
+# Installs and configures Filebeat
 - name: Configure Filebeat
   ansible.builtin.include_role:
     name: elk
