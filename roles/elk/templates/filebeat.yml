@@ -19,7 +19,7 @@ filebeat.inputs:
 # Below are the input specific configurations.
 
 # filestream is an input for collecting log messages from files.
-- type: filestream
+- type: log
 
   # Unique ID among all inputs, an ID is required.
   id: my-filestream-id
@@ -53,8 +53,8 @@ filebeat.inputs:
   # to add additional information to the crawled log files for filtering
   fields:
    appName: cart 
-   
-   review: 1
+   env: dev 
+   logType: json
 
 # ============================== Filebeat modules ==============================
 
