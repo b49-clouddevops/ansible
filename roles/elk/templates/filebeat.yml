@@ -54,7 +54,7 @@ filebeat.inputs:
   fields:
    component: cart 
    env: dev 
-   logType: json
+   logtype: json
 
 # ============================== Filebeat modules ==============================
 
