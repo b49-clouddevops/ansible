@@ -51,9 +51,10 @@ filebeat.inputs:
 
   # Optional additional fields. These fields can be freely picked
   # to add additional information to the crawled log files for filtering
-  #fields:
-  #  level: debug
-  #  review: 1
+  fields:
+   appName: cart 
+   
+   review: 1
 
 # ============================== Filebeat modules ==============================
 
