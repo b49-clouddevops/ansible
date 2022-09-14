@@ -19,7 +19,7 @@ filebeat.inputs:
 # Below are the input specific configurations.
 
 # filestream is an input for collecting log messages from files.
-- type: log
+- type: filestream
 
   # Unique ID among all inputs, an ID is required.
   id: my-filestream-id
