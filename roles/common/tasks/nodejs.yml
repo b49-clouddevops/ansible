@@ -41,6 +41,7 @@
   ansible.builtin.include_role:
     name: elk
     tasks_from: filebeat
+  when: cart
 
 - name: Set-hostname 
   ansible.builtin.include_role:
