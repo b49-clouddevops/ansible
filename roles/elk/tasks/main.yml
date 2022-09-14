@@ -7,3 +7,5 @@
   systemd:
     name: logstash 
     state: restarted 
+
+# I want to consider the restart as success only when the port 5044 is opened 
