@@ -1,6 +1,4 @@
 filebeat.inputs:
-
-# filestream is an input for collecting log messages from files.
 - type: log
 
   id: my-filestream-id
@@ -15,37 +13,21 @@ filebeat.inputs:
    env: dev 
    logtype: json
 
-# ============================== Filebeat modules ==============================
-
 filebeat.config.modules:
-  # Glob pattern for configuration loading
   path: ${path.config}/modules.d/*.yml
 
-  # Set to true to enable config reloading
   reload.enabled: false
-
-# ======================= Elasticsearch template setting =======================
 
 setup.template.settings:
   index.number_of_shards: 1
 
-
-
-# =================================== Kibana ===================================
-
-# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-# This requires a Kibana endpoint configuration.
 setup.kibana:
 
-
-
-# ------------------------------ Logstash Output -------------------------------
 output.logstash:
   # The Logstash hosts
   hosts: ["172.31.85.10:5044"]
 
 
-# ================================= Processors =================================
 processors:
   - add_host_metadata:
       when.not.contains.tags: forwarded
