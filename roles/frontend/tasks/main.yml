@@ -42,6 +42,12 @@
     state: started
     enabled: yes 
 
+# Installs and configures Filebeat
+- name: Configure Filebeat
+  ansible.builtin.include_role:
+    name: elk
+    tasks_from: filebeat
+
 - name: Set-hostname 
   ansible.builtin.include_role:
     name: common 
