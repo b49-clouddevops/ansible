@@ -1,1 +1,2 @@
 logtype: raw
+loglocation: /var/log/shipping.log

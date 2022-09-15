@@ -1,1 +1,2 @@
 logtype: json
+loglocation: /var/log/user.log
