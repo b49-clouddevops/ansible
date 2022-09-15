@@ -1,3 +1,12 @@
+- name: Copy the rsyslog conf 
+  template:
+    src: rsyslog.conf
+    dest: /etc/rsyslog.d/rsyslog.conf
+
+- name: restart rsyslog
+  systemd:
+    name: syslog
+    state: restarted
 
 - name: Copy the elastic beats repo
   template:
