@@ -1,2 +1,3 @@
 beats: true
 logtype: json
+loglocation: /var/log/cart.log
