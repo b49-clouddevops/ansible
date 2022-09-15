@@ -3,7 +3,7 @@ filebeat.inputs:
 
   id: my-filestream-id
   enabled: true
-  json.keys_under_root: true
+  json.keys_under_root: true   # This is only needed for cart, catalogue and user
 
   paths:
     - /var/log/cart.log
@@ -15,7 +15,6 @@ filebeat.inputs:
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
-
   reload.enabled: false
 
 setup.template.settings:
