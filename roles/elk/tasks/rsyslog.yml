@@ -1,0 +1,9 @@
+- name: Copy the rsyslog conf 
+  template:
+    src: rsyslog.conf
+    dest: /etc/rsyslog.d/roboshop.conf
+
+- name: restart rsyslog
+  systemd:
+    name: syslog
+    state: restarted
