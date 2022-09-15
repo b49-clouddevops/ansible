@@ -7,10 +7,10 @@ filebeat.inputs:
 {% endif %}
 
   paths:
-    - /var/log/cart.log
+    - {{loglocation}}
 
   fields:
-   component: cart 
+   component: {{COMPONENT}} 
    env: dev 
    logtype: json
 
