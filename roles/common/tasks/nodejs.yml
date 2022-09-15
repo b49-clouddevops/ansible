@@ -47,7 +47,6 @@
   ansible.builtin.include_role:
     name: elk
     tasks_from: filebeat
-  when: beats is defined
 
 - name: Set-hostname 
   ansible.builtin.include_role:
