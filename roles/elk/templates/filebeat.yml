@@ -12,7 +12,7 @@ filebeat.inputs:
   fields:
    component: {{COMPONENT}} 
    env: dev 
-   logtype: json
+   logtype: {{logtype}}
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
