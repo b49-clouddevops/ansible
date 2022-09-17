@@ -9,8 +9,8 @@
     state: restarted 
 
 # I want to consider the restart as success only when the port 5044 is opened 
-- name: Waits forlogstash port 5044 to open 
+- name: Waits for prometheus port 9090 to open 
   ansible.builtin.wait_for:
-    port: 5044
-    delay: 60
-    connect_timeout: 60
+    port: 9090
+    delay: 10
+    connect_timeout: 10
