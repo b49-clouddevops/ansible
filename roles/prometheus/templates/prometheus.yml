@@ -30,3 +30,7 @@ scrape_configs:
         filters:
           - name: "tag:prometheus-monitor" 
             values: ["yes","true"]
+    relabel_configs:
+      - separator: ;
+        replacement: ;
+        action: replace
