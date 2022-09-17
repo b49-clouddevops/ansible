@@ -1,33 +1,21 @@
 filebeat.inputs:
 - type: log
-  # id: my-filestream-id
   enabled: true
-{% if logtype == "json" %}
-  json.keys_under_root: true  # This is only needed for cart, catalogue and user
-{% endif %}
-
   paths:
     - {{loglocation}}
-
   fields:
    component: {{COMPONENT}} 
-   env: dev 
    logtype: {{logtype}}
+
+output.logstash:
+  hosts: ["172.31.85.10:5044"]
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
   reload.enabled: false
-
 setup.template.settings:
   index.number_of_shards: 1
-
 setup.kibana:
-
-output.logstash:
-  # The Logstash hosts
-  hosts: ["172.31.85.10:5044"]
-
-
 processors:
   - add_host_metadata:
       when.not.contains.tags: forwarded
