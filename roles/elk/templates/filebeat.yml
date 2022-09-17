@@ -1,6 +1,6 @@
 filebeat.inputs:
 - type: log
-  id: my-filestream-id
+  # id: my-filestream-id
   enabled: true
 {% if logtype == "json" %}
   json.keys_under_root: true  # This is only needed for cart, catalogue and user
