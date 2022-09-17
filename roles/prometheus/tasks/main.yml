@@ -1,1 +1,16 @@
-- name: Copy the prometheus config
+- name: Copy the prometheus config 
+  ansible.builtin.template:
+    src: prometheus.yml 
+    dest: /opt/prometheus/prometheus.yml 
+
+- name: Restart logstash 
+  systemd:
+    name: prometheus 
+    state: restarted 
+
+# I want to consider the restart as success only when the port 5044 is opened 
+- name: Waits forlogstash port 5044 to open 
+  ansible.builtin.wait_for:
+    port: 5044
+    delay: 60
+    connect_timeout: 60
